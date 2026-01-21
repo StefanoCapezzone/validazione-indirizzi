@@ -19,7 +19,10 @@ from pathlib import Path
 from datetime import datetime
 
 # Configurazione
-API_KEY = '***REMOVED***'
+import os
+from dotenv import load_dotenv
+load_dotenv()
+API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', '')
 MAX_INDIRIZZO_LEN = 35
 REQUESTS_PER_SECOND = 40  # Lasciamo margine sul limite di 50
 
